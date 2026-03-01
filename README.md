@@ -493,3 +493,13 @@ python3 manage.py refresh
 ## License
 
 如仓库根目录存在 `LICENSE` 文件，以该文件为准。
+
+## Credits / 致谢
+
+本项目为二次开发，基于以下开源项目整合而成：
+
+- **注册机核心** (`register/chatgpt_register.py`)：来自 LINUX DO 社区 kun775 发布的 ChatGPT 批量注册工具，感谢原作者的出色工作
+- **账号清理工具** (`cleaner/clean_codex.py`)：参考 [HsMirage/CliproxyAccountCleaner](https://github.com/HsMirage/CliproxyAccountCleaner) 的设计思路
+- **CPA 账号池终端**：[router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI)
+
+如有侵权请联系删除。本项目仅供学习研究使用。
