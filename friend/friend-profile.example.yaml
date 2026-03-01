@@ -1,0 +1,19 @@
+# friend-profile.example.yaml
+# 由项目维护者生成，发给朋友使用
+# 不要上传到 Git（已在 .gitignore 中排除）
+
+assets:
+  cf_worker_url: "https://your-email-worker.workers.dev"
+  domains:
+    - "yourdomain.win"
+  capsolver_api_key: "CAP-xxxxxxxx"
+  proxy_http: "http://127.0.0.1:7894"
+  proxy_subscription_url: "https://your-sub-url"
+  cpa_url: "http://localhost:8317"
+  cpa_api_key: "sk-xxxxxxxx"
+
+restrictions:
+  daily_limit_per_domain: 50    # 朋友模式限制，不可修改
+  workers: 2                    # 并发限制，不可修改
+
+seed_accounts_dir: "./friend/seed_accounts/"

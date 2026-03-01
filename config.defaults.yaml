@@ -1,0 +1,31 @@
+mail:
+  provider: "cf_worker"
+  cf_worker_url: ""
+  domains:
+    - ""
+
+capsolver:
+  api_key: ""
+
+proxy:
+  http: "http://127.0.0.1:7894"
+
+cpa:
+  url: "http://localhost:8317"
+  api_key: ""
+  auths_dir: "./cpa/runtime/auths"
+
+cloudflare:
+  email: ""
+  api_key: ""
+  account_id: ""
+
+register:
+  workers: 2
+  batch_size: 100
+  daily_limit_per_domain: 200
+
+pool:
+  max: 388
+  min: 350
+  reservoir_min: 500

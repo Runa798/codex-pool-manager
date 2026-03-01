@@ -1,0 +1,20 @@
+# codex-pool-manager crontab 参考配置
+# 使用方式: crontab -e 后粘贴以下内容（修改路径）
+
+MANAGE="/home/你的用户名/codex-pool-manager/manage.py"
+
+# 每30分钟：恢复额度已恢复的临时禁用账号
+*/30 * * * * python3 $MANAGE restore-quota >> /tmp/codex-restore.log 2>&1
+
+# 每3小时：检查额度耗尽的账号并临时禁用
+0 */3 * * * python3 $MANAGE check-quota >> /tmp/codex-quota.log 2>&1
+
+# 每天凌晨1点：清理 401 死号
+0 1 * * * python3 $MANAGE clean >> /tmp/codex-clean.log 2>&1
+
+# 每天凌晨2点：刷新即将过期的 token，并从蓄水池补充号池
+0 2 * * * python3 $MANAGE refresh >> /tmp/codex-refresh.log 2>&1
+0 2 * * * python3 $MANAGE fill-pool >> /tmp/codex-fill.log 2>&1
+
+# 每天凌晨3点：根据蓄水池水位决定是否触发注册（如低于 reservoir_min）
+0 3 * * * python3 $MANAGE register --auto >> /tmp/codex-register.log 2>&1

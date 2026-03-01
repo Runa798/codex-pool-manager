@@ -1,0 +1,42 @@
+# mihomo-codex3 for Openai-Auto-Register
+# HTTP proxy: 127.0.0.1:7894
+# SOCKS5 proxy: 127.0.0.1:7895
+# NOTE: Replace FLOWER_SS_SUB_URL with your real subscription URL if available.
+
+port: 7894
+socks-port: 7895
+allow-lan: false
+mode: rule
+log-level: info
+ipv6: false
+
+# Preferred: Flower_SS subscription provider (fill URL to enable)
+proxy-providers:
+  Flower_SS:
+    type: http
+    url: ""
+    interval: 3600
+    path: ./flower_ss_provider.yaml
+    health-check:
+      enable: true
+      interval: 300
+      url: https://www.gstatic.com/generate_204
+
+# Fallback static proxy, used when subscription URL is not set
+proxies:
+  - name: DIRECT_ONLY
+    type: direct
+
+proxy-groups:
+  - name: AUTO
+    type: url-test
+    use:
+      - Flower_SS
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+
+rules:
+  - MATCH,AUTO
+external-controller: 127.0.0.1:9093
+secret: ""

@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+config.yaml
+friend/*.yaml
+data/
+logs/
+cpa/
+*.pem
+seed_accounts/*.json
+friend/seed_accounts/*.json
+*.bak
+*.log
+friend/seed_accounts/*.json
+friend/*.yaml
+!friend/friend-profile.example.yaml
