@@ -1,0 +1,15 @@
+[Unit]
+Description=Codex Register Daily - Launch 3 registrars
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/heye/.openclaw/agents/frieren/workspace
+ExecStart=/usr/bin/python3 skills/codex-register/scripts/register_manager.py --run
+Environment=PYTHONUNBUFFERED=1
+Restart=no
+StandardOutput=append:/home/heye/.openclaw/logs/codex_register_daily.log
+StandardError=append:/home/heye/.openclaw/logs/codex_register_daily.log
+
+[Install]
+WantedBy=default.target

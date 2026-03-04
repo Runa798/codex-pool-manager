@@ -1,0 +1,37 @@
+{
+  "db_path": "/home/heye/.openclaw/data/codex_pool.db",
+  "cpa_base": "http://127.0.0.1:8317",
+  "cpa_key_env": "CPA_API_KEY",
+  "pool_threshold": 388,
+  "daily_quota": 250,
+  "cpa_auths_dir": "/home/heye/cliproxyapi_runtime/auths/",
+  "staging_dir": "/home/heye/codex_staging/",
+  "registrars": [
+    {
+      "name": "kun775",
+      "dir": "/home/heye/kun775-register",
+      "domain": "heyerice33.win",
+      "proxy_env": "PROXY_KUN775",
+      "weight": 1
+    },
+    {
+      "name": "cc",
+      "dir": "/home/heye/cc-register",
+      "domain": "heye33rice.cc",
+      "proxy_env": "PROXY_CC",
+      "weight": 1
+    },
+    {
+      "name": "uk",
+      "dir": "/home/heye/uk-register",
+      "domain": "ri33ceheye22.uk",
+      "proxy_env": "PROXY_UK",
+      "weight": 1
+    }
+  ],
+  "staging_dirs": {
+    "kun775": "/home/heye/codex_staging/kun775/",
+    "cc": "/home/heye/codex_staging/cc/",
+    "uk": "/home/heye/codex_staging/uk/"
+  }
+}
